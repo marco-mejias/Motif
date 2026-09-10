@@ -1,0 +1,34 @@
+{
+  "packages": [
+    {
+      "pkgDestination": "res://Jenova/Packages/JenovaMSVCCompiler-Universal",
+      "pkgHash": "b1ab9829b05df8daee84ba64633c1116",
+      "pkgInstallScript": false,
+      "pkgName": "Microsoft Compiler Bridge (MSVC-Bridge)",
+      "pkgPlatform": 0,
+      "pkgType": 0,
+      "pkgUninstallScript": false,
+      "pkgVersion": "Universal (x64)"
+    },
+    {
+      "pkgDestination": "res://Jenova/Packages/GodotSDK-4.7.0",
+      "pkgHash": "cb1d8cbff6e502cc5fb5490bfa00f239",
+      "pkgInstallScript": false,
+      "pkgName": "Godot SDK 4.7.0 R1 (MSVC)",
+      "pkgPlatform": 0,
+      "pkgType": 1,
+      "pkgUninstallScript": false,
+      "pkgVersion": "4.7.0 (x64)"
+    },
+    {
+      "pkgDestination": "res://Jenova/Packages/JenovaLLVMCompiler-19.1.7",
+      "pkgHash": "6139e26d9050c8e85ad6718f01cdf5de",
+      "pkgInstallScript": false,
+      "pkgName": "LLVM Clang Toolchain (Microsoft Edition)",
+      "pkgPlatform": 0,
+      "pkgType": 0,
+      "pkgUninstallScript": false,
+      "pkgVersion": "19.1.7 (x64)"
+    }
+  ]
+}

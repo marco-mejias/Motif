@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bjtiayevcyjlh"]
+
+[ext_resource type="Script" uid="uid://cfo0g0egfsi16" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://0rixkvipkd04" path="res://AppChat.tscn" id="2_h2yge"]
+
+[node name="PhoneUI" type="Control" unique_id=377336570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=59316443]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 44.0
+offset_right = 765.0
+offset_bottom = 585.0
+
+[node name="Divisor" type="HBoxContainer" parent="." unique_id=2136664458]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 45.0
+offset_right = 765.0
+offset_bottom = 584.0
+
+[node name="AppBar" type="VBoxContainer" parent="Divisor" unique_id=23013877]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Divisor/AppBar" unique_id=401846416]
+layout_mode = 2
+text = "WHATSAPP"
+
+[node name="Button2" type="Button" parent="Divisor/AppBar" unique_id=1075161378]
+layout_mode = 2
+text = "TWITTER"
+
+[node name="MarginContainer" type="MarginContainer" parent="Divisor" unique_id=336024872]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="AppChat" parent="Divisor/MarginContainer" unique_id=998760748 instance=ExtResource("2_h2yge")]
+layout_mode = 2

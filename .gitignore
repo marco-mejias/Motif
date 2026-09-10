@@ -1,0 +1,14 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+Jenova/Packages/
+# Ignorar carpetas de exportación (donde guardas el juego ya compilado para jugar)
+export/
+exports/
+
+# Ignorar archivos generados si programas en C# (.NET/Mono)
+.mono/
+data_*/
+mono_crash.*.jso
+
+.vs/

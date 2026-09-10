@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://8opf11poime8"]
+
+[ext_resource type="Script" uid="uid://c0fvntve7s3t" path="res://Scripts/Model/StoryData.cpp" id="1_02iei"]
+
+[node name="Node" type="Node" unique_id=725213279]
+script = ExtResource("1_02iei")

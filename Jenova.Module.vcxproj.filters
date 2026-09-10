@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{a83f1ca5-ad00-b397-73d9-e6a26b0e70b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Controller">
+      <UniqueIdentifier>{6a74b073-e3ca-e0bd-536e-b8f7ac52d472}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\Controller\StoryController.cpp">
+      <Filter>Scripts\Controller</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

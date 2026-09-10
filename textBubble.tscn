@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cylud1vwickq3"]
+
+[ext_resource type="Script" uid="uid://dtt677df4x3td" path="res://bubbleMessage.gd" id="1_mn6yr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vurcw"]
+bg_color = Color(0.7922466, 0.5464123, 1.92523e-07, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="TextBubble" type="PanelContainer" unique_id=1890938713]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vurcw")
+script = ExtResource("1_mn6yr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1796714148]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1215678863]
+layout_mode = 2
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
