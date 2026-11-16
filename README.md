@@ -61,7 +61,7 @@ The codebase is structured around a clean separation between UI presentation and
 
 **To run the prototype:**
 1. Clone the repository.
-2. Open the project folder using **Godot 4.x**.
+2. Open the project folder using **Godot 4.6**.
 3. Ensure the **Dialogue Manager** plugin is enabled in `Project -> Project Settings -> Plugins`.
 4. Run the main scene (`Scenes/Main.tscn`). 
 
