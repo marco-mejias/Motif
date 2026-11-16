@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bbceoyjlddh8l"]
+
+[ext_resource type="Script" uid="uid://bpt2c087w05ey" path="res://Scripts/View/PianoView.gd" id="1_3r1cc"]
+
+[node name="PianoView" type="PanelContainer" unique_id=1494595891]
+custom_minimum_size = Vector2(0, 330)
+script = ExtResource("1_3r1cc")

@@ -1,0 +1,18 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://irgwd3bw23bh"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_piano"]
+resource_name = "Reverb"
+room_size = 0.65
+damping = 0.45
+spread = 0.8
+wet = 0.28
+
+[resource]
+bus/1/name = &"Piano"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectReverb_piano")
+bus/1/effect/0/enabled = true

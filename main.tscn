@@ -1,7 +1,27 @@
 [gd_scene format=3 uid="uid://bjtiayevcyjlh"]
 
-[ext_resource type="Script" uid="uid://cfo0g0egfsi16" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cfo0g0egfsi16" path="res://Scripts/Model/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://0rixkvipkd04" path="res://AppChat.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bbceoyjlddh8l" path="res://PianoView.tscn" id="3_h2yge"]
+[ext_resource type="Script" path="res://Scripts/Controller/ConversationController.gd" id="5_lquwl"]
+[ext_resource type="Shader" path="res://Shaders/night_sky.gdshader" id="6_sky"]
+[ext_resource type="Shader" path="res://Shaders/vignette.gdshader" id="7_vig"]
+[ext_resource type="Script" path="res://Scripts/View/Scenery.gd" id="8_scn"]
+[ext_resource type="Script" path="res://Scripts/View/StatusBar.gd" id="9_bar"]
+[ext_resource type="Script" path="res://Scripts/View/ChatListView.gd" id="10_list"]
+[ext_resource type="Script" path="res://Scripts/View/ConversationView.gd" id="11_conv"]
+[ext_resource type="Script" path="res://Scripts/View/Composer.gd" id="12_comp"]
+[ext_resource type="Script" path="res://Scripts/View/NotificationBanner.gd" id="13_notif"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sky"]
+shader = ExtResource("6_sky")
+shader_parameter/dawn = 0.0
+shader_parameter/aspect = 0.5625
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vig"]
+shader = ExtResource("7_vig")
+shader_parameter/strength = 0.6
+shader_parameter/grain = 0.015
 
 [node name="PhoneUI" type="Control" unique_id=377336570]
 layout_mode = 3
@@ -10,38 +30,197 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_0xm2m")
 
-[node name="Background" type="ColorRect" parent="." unique_id=59316443]
+[node name="Sky" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_sky")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Scenery" type="Control" parent="." node_paths=PackedStringArray("sky")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_scn")
+sky = NodePath("../Sky")
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vig")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Phone" type="Control" parent="." groups=["phone"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -900.0
+offset_right = 440.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(440, 900)
+mouse_filter = 2
+
+[node name="VolumeButton" type="Panel" parent="Phone"]
 layout_mode = 0
-offset_left = 407.0
-offset_top = 44.0
-offset_right = 765.0
-offset_bottom = 585.0
+offset_left = -9.0
+offset_top = 300.0
+offset_right = 6.0
+offset_bottom = 450.0
+mouse_filter = 2
 
-[node name="Divisor" type="HBoxContainer" parent="." unique_id=2136664458]
+[node name="PowerButton" type="Panel" parent="Phone"]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 45.0
-offset_right = 765.0
-offset_bottom = 584.0
+offset_left = 874.0
+offset_top = 360.0
+offset_right = 889.0
+offset_bottom = 520.0
+mouse_filter = 2
 
-[node name="AppBar" type="VBoxContainer" parent="Divisor" unique_id=23013877]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Body" type="Panel" parent="Phone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="Button" type="Button" parent="Divisor/AppBar" unique_id=401846416]
-layout_mode = 2
-text = "WHATSAPP"
+[node name="Screen" type="Panel" parent="Phone"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="Button2" type="Button" parent="Divisor/AppBar" unique_id=1075161378]
-layout_mode = 2
-text = "TWITTER"
+[node name="Pages" type="Control" parent="Phone/Screen"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Divisor" unique_id=336024872]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.0
+[node name="ChatList" type="VBoxContainer" parent="Phone/Screen/Pages"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_list")
 
-[node name="AppChat" parent="Divisor/MarginContainer" unique_id=998760748 instance=ExtResource("2_h2yge")]
+[node name="Conversation" type="VBoxContainer" parent="Phone/Screen/Pages" node_paths=PackedStringArray("header", "chat_area")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_conv")
+header = NodePath("Header")
+chat_area = NodePath("ChatArea")
+
+[node name="Header" type="PanelContainer" parent="Phone/Screen/Pages/Conversation"]
 layout_mode = 2
+
+[node name="ChatArea" type="PanelContainer" parent="Phone/Screen/Pages/Conversation"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AppChat" parent="Phone/Screen/Pages/Conversation/ChatArea" unique_id=998760748 instance=ExtResource("2_h2yge")]
+layout_mode = 2
+
+[node name="Composer" type="PanelContainer" parent="Phone/Screen/Pages/Conversation"]
+layout_mode = 2
+script = ExtResource("12_comp")
+
+[node name="Keyboard" parent="Phone/Screen/Pages/Conversation" instance=ExtResource("3_h2yge")]
+layout_mode = 2
+
+[node name="StatusBar" type="HBoxContainer" parent="Phone/Screen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 84.0
+grow_horizontal = 2
+script = ExtResource("9_bar")
+
+[node name="Island" type="Panel" parent="Phone/Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 64.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Notification" type="PanelContainer" parent="Phone/Screen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = -220.0
+offset_right = -24.0
+offset_bottom = -100.0
+grow_horizontal = 2
+script = ExtResource("13_notif")
+
+[node name="HomeBar" type="Panel" parent="Phone/Screen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -26.0
+offset_right = 120.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Clouds" type="Control" parent="." groups=["cloud_layer"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ConversationController" type="Node" parent="." unique_id=709391020]
+script = ExtResource("5_lquwl")

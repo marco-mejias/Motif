@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cowmssx0b3tif"]
+
+[ext_resource type="Script" uid="uid://rhe4c48vwkxq" path="res://Scripts/View/Cloud.gd" id="1_kk6s5"]
+[ext_resource type="Texture2D" uid="uid://pqgi6mqt3nq6" path="res://Assets/cloud_single/cloud10.png" id="2_2ys1e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nf2e1"]
+
+[node name="Cloud" type="Control" unique_id=24324298]
+custom_minimum_size = Vector2(300, 135)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 135.0
+pivot_offset = Vector2(150, 67)
+mouse_default_cursor_shape = 2
+script = ExtResource("1_kk6s5")
+
+[node name="Glow" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = -40.0
+offset_bottom = -30.0
+mouse_filter = 2
+
+[node name="Sprite" type="TextureRect" parent="." unique_id=314358553]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("2_2ys1e")
+expand_mode = 1
+
+[node name="Dots" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -34.0
+offset_right = 60.0
+offset_bottom = -18.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=204627928]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -26.0
+offset_right = -40.0
+offset_bottom = 16.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.106, 0.106, 0.149, 1)
+theme_override_colors/font_placeholder_color = Color(0.106, 0.106, 0.149, 0.45)
+theme_override_colors/caret_color = Color(0.106, 0.106, 0.149, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nf2e1")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_nf2e1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nf2e1")
+placeholder_text = "?"
+alignment = 1
+max_length = 12
+context_menu_enabled = false

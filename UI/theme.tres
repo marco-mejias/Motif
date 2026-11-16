@@ -1,0 +1,58 @@
+[gd_resource type="Theme" format=3]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(1, 1, 1, 0.05)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+bg_color = Color(1, 1, 1, 0.09)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_scroll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grabber"]
+bg_color = Color(1, 1, 1, 0.12)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 3.0
+content_margin_right = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grabber_hl"]
+bg_color = Color(1, 1, 1, 0.22)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 3.0
+content_margin_right = 3.0
+
+[resource]
+default_font_size = 30
+Button/colors/font_color = Color(0.925, 0.918, 0.965, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.925, 0.918, 0.965, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/styles/normal = SubResource("StyleBoxEmpty_btn")
+Button/styles/hover = SubResource("StyleBoxFlat_btn_hover")
+Button/styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_btn_pressed")
+Button/styles/focus = SubResource("StyleBoxEmpty_btn")
+Button/styles/disabled = SubResource("StyleBoxEmpty_btn")
+Label/colors/font_color = Color(0.925, 0.918, 0.965, 1)
+RichTextLabel/colors/default_color = Color(0.925, 0.918, 0.965, 1)
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_scroll")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_scroll")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_grabber")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_grabber_hl")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_grabber_hl")

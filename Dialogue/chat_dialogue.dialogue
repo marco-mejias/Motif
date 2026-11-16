@@ -1,0 +1,119 @@
+# ==========================================
+# CHAT 1: DIVER
+# ==========================================
+~ diver_1
+Diver: Iou colegui.
+Diver: ¿Bonita noche, no? #notes:[0,1,2]
+Prota: Déjame en paz. #notes:[0,1,5]
+Diver: Más perdido que un pulpo en un garaje.
+Prota: Son las 5 de la mañana. #notes:[0,1,3]
+Prota: He tenido suficiente por hoy. #notes:[0,1,3]
+Diver: ¿Estabas llorando?
+Prota: No. #notes:[0,1]
+Diver: Sí. #notes:[4,5]
+Diver: Sí, lo hacías, sí. #notes:[4,5]
+Prota: Lárgate.
+Diver: No me digas eso colegui, que me pongo a llorar... #notes:[1,4,5]
+Diver: Jejeje.... #notes:[1,4,5]
+
+do GameEvents.unlock_chat("poker")
+=> END
+# ==========================================
+# CHAT 2: POKER
+# ==========================================
+~ poker_1
+Poker: No vas arreglar nada así. #notes:[0,1]
+Poker: Es hora de que hablemos.
+Poker: Como podamos...
+
+do GameEvents.unlock_keyboard()
+
+Poker: Habla con esto a partir de ahora.
+Poker: Escuchate a tí mismo. Escucha a los demás.
+Poker: Cada mensaje tiene una melodía. Un sentimiento. Una dirección.
+Poker: Pulsalos. Escúchalos.
+Poker: Mantenlos. Preservalos.
+Poker: Habla. Sé sincero.
+Poker: Vuelve. Recuerda.
+Poker: ¿Entiendes lo que te digo? Demuéstralo.
+
+do GameEvents.wait_response([4,5], "poker_2")
+Prota: Creo que sí, lo entiendo...
+=> END
+
+~ poker_2
+do GameEvents.unlock_chat("blind")
+=> END
+
+~ blind_1
+Blind: *llora*
+Prota: ¿Cómo que *llora*?
+Blind: *Llora más fuerte*
+Prota: Para tío, me estas dando vergüenza ajena.
+Blind: ¿?
+Blind: ¿Porque no me han dado más opciones en este juego? *llora*
+Prota: VA, DIME QUE QUIERES.
+Blind: No tienes nada más que hacer que molestarme?
+Prota: No...No estoy haciendo nada.
+
+Blind: Porque no le gustamos a nadie?
+Prota: No lo sé....
+Blind: Tenemos un problema
+
+Diver: Estoy de acuerdo. Mírate.
+Prota: No me veo mal, no?
+Diver: Cercano a la mierda que has bebido hoy.
+Prota: Eres un subnormal, lo sabías?
+Diver: JAJAJAJAJAJA, SÍ LO SÉ, SÍ.
+Prota: La cosa no ha fluído, ya está.
+Diver: Hemos malinterpretado todo, otra vez.
+Prota: Pero no es nuestra culpa, no?
+
+Robot: DIOS, PERO QUE MIERDA! DEBE SER UNA BROMA!
+Prota: Cálmate.
+Robot: Con lo buena que estaba tío, joder.
+Prota: Em....
+Robot: Te acuerdas de como nos miraba? Dios, no tenía sentido. Te acuerdas, verdad? Recuerdalo.
+Prota: Claro que me acuerdo...
+Robot: UN SET-UP, UNA TRAMPA, NOS HA ENGAÑADO TODO EL MUNDO! UNA BROMA DE MUY MAL GUSTO!
+Robot: NOS TENDRÍAMOS QUE HABER LANZADO TÍO, BUAH, BUAH COMO...
+Prota: No...no creo que hubiera cambiado nada...
+
+Astro: Te acuerdas de como nos miraba? Dios, no tenía sentido. Te acuerdas, verdad? Recuerdalo.
+Prota: Prefiero no hacerlo.
+Astro: Yo quería una novia, me la has quitado.
+Astro: Pensaba que una vez por todas ibamos a pasar de...
+Prota: NO.
+Prota: NO LO CONVIERTAS EN ELLA, PORFAVOR.
+Astro: Quiero decir, mira como sé reia de tus chistes.
+
+Prota: Iou, como andas?
+Prota: Te he visto subir...cosas al ig y te quería preguntar.
+Chica: Estoy..bien.
+Chica: Bueno, mas o menos.
+Prota: Por?
+Chica: XAXIAJSDIOJSOIDASIDOQJWIEJQWIJEIJQE
+Prota: Qué hijas de putas. 
+Chica: Paso de ellas, es lo que siempre he hecho.
+
+Prota: TE HAS COMPRADO UN XASDKAJSDKAJSDJASDJASKDL
+Chica: SIIIIIII
+Prota: DÁMELO
+Chica: no.
+
+Chica: Me he instalado el IASJDIOASDIJASIOD en tu honor.
+Chica: He estado jugando unas partidas jeje.
+Prota: :(
+
+Chica: pero nos casamos de broma o no
+Prota: em...
+Chica: que?
+Prota: ASKJDASJKDLAKSJDKLASKDJ
+
+Prota: BASTA! JODER TÍO!
+Poker: Creo que tienes problemas de de
+
+=> END
+
+
+
